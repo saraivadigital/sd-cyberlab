@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  idor:
+    build: ./idor
+    container_name: lab-idor
+    ports:
+      - "5001:5000"
+    restart: unless-stopped
+
+  ssti:
+    build: ./ssti
+    container_name: lab-ssti
+    ports:
+      - "5002:5000"
+    restart: unless-stopped
+
+  sqli:
+    build: ./sqli
+    container_name: lab-sqli
+    ports:
+      - "5003:5000"
+    restart: unless-stopped
+
+  jwt:
+    build: ./jwt
+    container_name: lab-jwt
+    ports:
+      - "5004:5000"
+    restart: unless-stopped
+
+  cmdi:
+    build: ./cmdi
+    container_name: lab-cmdi
+    ports:
+      - "5005:5000"
+    restart: unless-stopped
+
+  path-traversal:
+    build: ./path-traversal
+    container_name: lab-path
+    ports:
+      - "5006:5000"
+    restart: unless-stopped
