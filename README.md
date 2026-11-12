@@ -72,12 +72,16 @@ docker compose down
 
 ## 🧩 Lab 1 — IDOR (`http://localhost:5001`)
 
+![Lab IDOR](idor/lab-idor-home.JPG)
+
 **Conceito:** O sistema usa IDs previsíveis na URL sem verificar se o usuário autenticado é dono do recurso.
 
 <details>
 <summary>📖 Ver detalhes e payloads</summary>
 
 ### Exploração
+
+![Lab IDORid7](idor/lab-idor-id7.JPG)
 
 **Enumeração de usuários:**
 ```bash
@@ -102,6 +106,8 @@ if user_id != session.get("user_id"):
 ---
 
 ## 🔥 Lab 2 — SSTI (`http://localhost:5002`)
+
+![Lab SSTI](ssti/lab-ssti-home.JPG)
 
 **Conceito:** O input do usuário é renderizado como template Jinja2 no servidor sem sanitização.
 
@@ -146,6 +152,8 @@ http://localhost:5002/?name={{lipsum.__globals__['os'].popen('cat /tmp/flag.txt'
 
 ## 🗄️ Lab 3 — SQLi (`http://localhost:5003`)
 
+![Lab SQLi](sqli/lab-sqli-home.JPG)
+
 **Conceito:** Queries SQL construídas por concatenação de string — sem prepared statements.
 
 <details>
@@ -182,6 +190,8 @@ cur.execute("SELECT * FROM users WHERE username=? AND password=?", (username, pa
 ---
 
 ## 🔑 Lab 4 — JWT (`http://localhost:5004`)
+
+![Lab JWT](jwt/lab-jwt-home.JPG)
 
 **Conceito:** A aplicação aceita tokens JWT com `alg:none`, pulando a verificação de assinatura.
 
@@ -225,6 +235,8 @@ jwt.decode(token, SECRET, algorithms=["HS256"])
 
 ## 🌐 Lab 5 — CMDi (`http://localhost:5005`)
 
+![Lab CMDi](cmdi/lab-cmdi-home.JPG)
+
 **Conceito:** Input do usuário concatenado em um comando shell com `shell=True`.
 
 <details>
@@ -265,6 +277,8 @@ subprocess.run(["ping", "-c", "2", host], capture_output=True)  # sem shell=True
 ---
 
 ## 📁 Lab 6 — Path Traversal (`http://localhost:5006`)
+
+![Lab PathT](path-traversal/lab-patht-home.JPG)
 
 **Conceito:** Caminhos construídos com `os.path.join` sem normalização ou validação do resultado.
 
