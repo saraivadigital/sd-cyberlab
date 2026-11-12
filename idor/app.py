@@ -7,14 +7,14 @@ from flask import Flask, request, jsonify, render_template_string
 app = Flask(__name__)
 
 USERS = {
-    1: {"id": 1, "nome": "Admin",             "email": "admin@cyberlab.sd",     "role": "admin", "bio": "Administrador do sistema. Nada aqui para ver... ou será que tem?"},
-    2: {"id": 2, "nome": "Chewbacana",         "email": "chew@cyberlab.sd",      "role": "user",  "bio": "Brutão"},
+    1: {"id": 1, "nome": "Admin",             "email": "admin@cyberlab.sd",     "role": "admin", "bio": "O Root"},
+    2: {"id": 2, "nome": "Chewbacana",         "email": "chew@cyberlab.sd",      "role": "user",  "bio": "O Bruto"},
     3: {"id": 3, "nome": "Mestre Yodair",      "email": "mestrey@cyberlab.sd",   "role": "user",  "bio": "O Poderoso"},
-    4: {"id": 4, "nome": "Luke Johnnywalker",  "email": "padcal@cyberlab.sd",    "role": "user",  "bio": "Que a Força esteja com você"},
-    5: {"id": 5, "nome": "Anakiko Skywalker",  "email": "asky@cyberlab.sd",      "role": "user",  "bio": "É aqui que a diversão começa"},
-    6: {"id": 6, "nome": "Convidado Padrão",   "email": "convidado@cyberlab.sd", "role": "guest", "bio": "Usuário Visitante"},
+    4: {"id": 4, "nome": "Luke Johnnywalker",  "email": "luke@cyberlab.sd",    "role": "user",  "bio": "O Jedi"},
+    5: {"id": 5, "nome": "Anakiko Skywalker",  "email": "asky@cyberlab.sd",      "role": "user",  "bio": "O Inicio..."},
+    6: {"id": 6, "nome": "Convidado",          "email": "convidado@cyberlab.sd", "role": "guest", "bio": "Visitante"},
     7: {"id": 7, "nome": "Darth Cleiton",      "email": "dc@cyberlab.sd",        "role": "user",  "bio": "O Bravo"},
-    8: {"id": 8, "nome": "C-3Pião",            "email": "c3p@cyberlab.sd",       "role": "user",  "bio": "Droide de protocolo."},
+    8: {"id": 8, "nome": "C3-Pior",            "email": "c3p@cyberlab.sd",       "role": "user",  "bio": "Droide Zuado"},
     9: {"id": 9, "nome": "R2-Dadinho",         "email": "r2d@cyberlab.sd",       "role": "user",  "bio": "Robozinho F..."},
 }
 
